@@ -1,0 +1,19 @@
+{
+  "board": "huzzah",
+  "package": "esp8266",
+  "arch": "esp8266",
+  "parameters": "CpuFrequency=80,UploadSpeed=115200,FlashSize=4M3M",
+  "packageUrl": "http://arduino.esp8266.com/stable/package_esp8266com_index.json",
+  "libraries": [
+    "AzureIoTHub:0.2.0"
+  ],
+  "portPnpId": {
+    "win32": "USB\\VID_10C4&PID_EA60",
+    "linux": "usb-Silicon_Labs_CP2104_USB_to_UART_Bridge_Controller_",
+    "darwin": "usb-VID_10c4&PID_ea60"
+  },
+  "codeTemplateParameters": {
+    "LED_PIN": 0,
+    "BOARD_ID": "huzzah" 
+  }
+}

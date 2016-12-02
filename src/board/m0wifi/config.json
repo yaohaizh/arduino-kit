@@ -1,0 +1,21 @@
+{
+  "board": "adafruit_feather_m0'",
+  "package": "adafruit",
+  "arch": "samd",
+  "parameters": "",
+  "packageUrl": "https://adafruit.github.io/arduino-board-index/package_adafruit_index.json",
+  "libraries": [
+    "AzureIoTHub:0.2.0",
+    "https://github.com/adafruit/Adafruit_WINC1500.git",
+    "RTCZero"
+  ],
+  "portPnpId": {
+    "win32": "USB\\VID_239A&PID_800B&MI_00",
+    "linux": "usb-Adafruit_Feather_",
+    "darwin": "usb-VID_239a&PID_800b"
+  },
+  "codeTemplateParameters": {
+    "LED_PIN": 13,
+    "BOARD_ID": "m0wifi"
+  }
+}

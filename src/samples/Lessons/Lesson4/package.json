@@ -1,0 +1,12 @@
+{
+  "name": "gulp-tasks",
+  "version": "1.0.0",
+  "description": "Gulp tasks supporting sample deployment",
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "devDependencies": {
+    "azure-iot-common": "^1.0.15",
+    "azure-iothub": "^1.0.17",
+    "run-sequence": "^1.2.2"
+  }
+}

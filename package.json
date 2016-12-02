@@ -1,0 +1,34 @@
+{
+  "name": "arduino-kit",
+  "version": "1.0.0",
+  "description": "Arduino Kit for Node.js",
+  "main": "index.js",
+  "scripts": {},
+  "bin": {
+    "ak": "./bin/bin.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "azure-event-hubs": "0.0.4",
+    "azure-storage": "^1.4.0",
+    "chalk": "^1.1.3",
+    "fs-extra": "^1.0.0",
+    "glob": "^7.1.1",
+    "gulp-sequence": "^0.4.6",
+    "lodash": "^4.17.2",
+    "moment": "^2.17.0",
+    "request": "^2.79.0",
+    "serialport": "^4.0.6",
+    "unzip": "^0.1.11",
+    "yargs": "^6.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1"
+  }
+}
