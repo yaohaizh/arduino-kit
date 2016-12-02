@@ -1,7 +1,6 @@
 ﻿/*
  * IoT Hub Adafruit Feather HUZZAH ESP8266 - Microsoft Sample Code - Copyright (c) 2016 - Licensed MIT
  */
-
 const runSequence = require('run-sequence');
 const path = require('path');
 const fs = require('fs-extra');
@@ -11,7 +10,7 @@ module.exports = (gulp) => {
   const INTERVAL = 2000;
   // Total messages to be sent
   const MAX_MESSAGE_COUNT = 20;
-  const sentMessageCount = 0;
+  let sentMessageCount = 0;
 
   const configFilePath = path.join(gulp.options.toolsPath.gulp.options.configFileName);
   const config = fs.readFileSync(configFilePath);

@@ -63,7 +63,7 @@ class ArduinoApp {
   }
 
   _initArduino() {
-    return util.spawn(this.osLib.getArduinoCommand(), ['--get-pref', 'update.check'], {})
+    return util.spawn(this.osLib.getArduinoCommand(), ['--install-library', 'dummy'], {})
       .then(result => result)
       .catch(() => Promise.resolve());
   }
