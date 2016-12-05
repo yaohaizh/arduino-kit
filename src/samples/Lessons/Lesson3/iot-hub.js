@@ -45,5 +45,7 @@ function readIoTHub(config) {
     ).catch(printError);
 }
 
-module.exports.readIoTHub = readIoTHub;
-module.exports.cleanup = cleanup;
+module.exports = {
+  readIoTHub,
+  cleanup
+};

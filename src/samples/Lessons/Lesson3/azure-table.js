@@ -30,7 +30,7 @@ function readAzureTable(config) {
       if (error) {
         if (error.statusCode && error.statusCode === 404) {
           console.error(
-            '[Azure Table] ERROR: Table not found. Something might be wrong. Please go to troubleshooting page for more information.')
+            '[Azure Table] ERROR: Table not found. Something might be wrong. Please go to troubleshooting page for more information.');
         } else {
           console.error(`[Azure Table] ERROR:\n${error}`);
         }
@@ -57,7 +57,7 @@ function readAzureTable(config) {
   readNewMessages();
 }
 
-
-
-module.exports.readAzureTable = readAzureTable;
-module.exports.cleanup = cleanup;
+module.exports = {
+  readAzureTable,
+  cleanup
+};

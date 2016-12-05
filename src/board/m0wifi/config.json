@@ -1,5 +1,5 @@
 {
-  "board": "adafruit_feather_m0'",
+  "board": "adafruit_feather_m0",
   "package": "adafruit",
   "arch": "samd",
   "parameters": "",
@@ -7,7 +7,8 @@
   "libraries": [
     "AzureIoTHub:0.2.0",
     "https://github.com/adafruit/Adafruit_WINC1500.git",
-    "RTCZero"
+    "RTCZero",
+    "NTPClient"
   ],
   "portPnpId": {
     "win32": "USB\\VID_239A&PID_800B&MI_00",

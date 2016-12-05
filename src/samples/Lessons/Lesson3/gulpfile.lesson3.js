@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 const _ = require('lodash');
 const argv = require('yargs').argv;
 
-module.exports = (gulp) => {
+module.exports = (gulp, runSequence) => {
   const doesReadStorage = argv['read-storage'];
   const receiveMessages = doesReadStorage ? require('./azure-table.js').readAzureTable : require('./iot-hub.js').readIoTHub;
 
@@ -26,6 +26,8 @@ module.exports = (gulp) => {
     gulp.task('run', ['deploy', 'query-table-storage']);
   } else {
     gulp.task('query-iot-hub-messages', () => { receiveMessages(config); });
-    gulp.task('run', ['deploy', 'query-iot-hub-messages']);
+    gulp.task('run', (cb) => {
+      runSequence('deploy', ['listen', 'query-iot-hub-messages'], cb);
+    });
   }
 };

@@ -64,7 +64,7 @@ function spawn(command, args = [], options = {}) {
 function cloneRepo(url, folder) {
   if (fs.existsSync(folder)) {
     console.log(`Repo  ${url} was already cloned...`);
-    return Promise.resove();
+    return Promise.resolve();
   }
   return spawn('git', ['clone', url, folder], { stdio: 'inherit' });
 }

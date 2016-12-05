@@ -1,17 +1,15 @@
-
-/**
- * Wrapper class for Arduido app.
- */
-
 const path = require('path');
 const fs = require('fs-extra');
 const os = require('os');
 const glob = require('glob');
-const devdisco = require('./devdisco');
+const usbUtil = require('./usbUtil');
 const util = require('./util');
 const logger = require('./logger');
 const _ = require('lodash');
 
+/**
+ * Wrapper class for Arduido app.
+ */
 class ArduinoApp {
   constructor(options) {
     this.options = options;
@@ -141,6 +139,10 @@ class ArduinoApp {
       .forEach((fileName) => {
         fs.copySync(path.join(codePath, fileName), path.join(this.options.target, fileName));
       });
+    glob.sync('**/*.c*', { cwd: codePath })
+      .forEach((fileName) => {
+        fs.copySync(path.join(codePath, fileName), path.join(this.options.target, fileName));
+      });
   }
 
   _initConfig(config) {
@@ -164,7 +166,7 @@ class ArduinoApp {
       config.board = this.options.board;
 
       if (!this.options.port) {
-        devdisco.getUsbPorts(this.boardConfig).then((result) => {
+        usbUtil.getPorts(this.boardConfig).then((result) => {
           if (result.length && result.length > 0) {
             config.device_port = result[0].comName;
             logger.info(`Use ${config.device_port} for ${this.options.board}`);
